@@ -1,6 +1,6 @@
-const ctx = document.getElementById('myChart');
+const doughnutChatContainer = document.getElementById('myChart');
 
-new Chart(ctx, {
+new Chart(doughnutChatContainer, {
     type: 'doughnut',
     data: {
         labels: ['banana', 'orange', 'apple', 'mango', 'grape'],
@@ -14,8 +14,8 @@ new Chart(ctx, {
     }
 });
 
-const otherCtx = document.getElementById("bar-chart")
-new Chart(otherCtx, {
+const barChartContainer = document.getElementById("bar-chart")
+new Chart(barChartContainer, {
 
     data: {
         labels: ['banana', 'orange', 'apple', 'mango', 'grape'],
