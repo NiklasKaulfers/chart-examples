@@ -29,12 +29,18 @@ new Chart(barChartContainer, {
             label: '2Q2025',
             data: [30, 19, 35, 16, 50, Math.round(Math.random() * 50)],
             borderWidth: 1
-        }]
+        }],
     },
     options: {
         scales: {
             y: {
                 beginAtZero: true
+            }
+        },
+        plugins: {
+            title: {
+                display: true,
+                text: "Example Chart JS"
             }
         }
     }
