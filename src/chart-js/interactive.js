@@ -3,7 +3,9 @@ let numbers = [1,1,1];
 
 document.getElementById("randomize").addEventListener("click", () => {
     for (let i = 0; i < numbers.length; i++) {
-        chart.data.datasets[i].data[0] = Math.round(Math.random() * 50);
+        const update = Math.round(Math.random() * 50)
+        numbers[i] = update;
+        chart.data.datasets[i].data[0] = update;
     }
     chart.update();
 });
@@ -11,6 +13,7 @@ document.getElementById("randomize").addEventListener("click", () => {
 document.getElementById("reset").addEventListener("click", () => {
     for (let i = 0; i < numbers.length; i++) {
         chart.data.datasets[i].data[0] = 1;
+        numbers[i] = 1;
     }
     chart.update();
 });
