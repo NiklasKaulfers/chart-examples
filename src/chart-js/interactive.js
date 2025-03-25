@@ -26,9 +26,6 @@ const chart = new Chart(interactiveCanvas, {
         ]
     },
     options: {
-        interaction: {
-            mode: "index"
-        },
         onClick: (e) => {
             const point = chart.getElementsAtEventForMode(e, "nearest", {intersect: true}, true);
             if (point.length !== 0){
