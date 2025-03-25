@@ -1,5 +1,5 @@
-# A few Examples comparing chart.js and canvas.js
+# A few examples comparing chart.js, google charts and canvas.js
 those are static implementations  
 ## Deployed:
-https://niklaskaulfers.github.io/chart-js-examples/src/index.html
+[deployed examples](https://niklaskaulfers.github.io/chart-examples/src/index.html)
 
