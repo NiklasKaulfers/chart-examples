@@ -18,16 +18,16 @@ const barChartContainer = document.getElementById("bar-chart")
 new Chart(barChartContainer, {
 
     data: {
-        labels: ['banana', 'orange', 'apple', 'mango', 'grape'],
+        labels: ['banana', 'orange', 'apple', 'mango', 'grape', 'fruit of randomness'],
         datasets: [{
             type: "bar",
             label: '1Q2025',
-            data: [18, 29, 40, 34, 24],
+            data: [18, 29, 40, 34, 24, Math.round(Math.random() * 50)],
             borderWidth: 1
         }, {
             type: "bar",
             label: '2Q2025',
-            data: [30, 19, 35, 16, 50],
+            data: [30, 19, 35, 16, 50, Math.round(Math.random() * 50)],
             borderWidth: 1
         }]
     },
