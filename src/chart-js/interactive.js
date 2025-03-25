@@ -1,5 +1,19 @@
 const interactiveCanvas = document.getElementById("interactive-chart");
-let num = [1,1,1];
+let numbers = [1,1,1];
+
+document.getElementById("randomize").addEventListener("click", () => {
+    for (let i = 0; i < numbers.length; i++) {
+        chart.data.datasets[i].data[0] = Math.round(Math.random() * 50);
+    }
+    chart.update();
+});
+
+document.getElementById("reset").addEventListener("click", () => {
+    for (let i = 0; i < numbers.length; i++) {
+        chart.data.datasets[i].data[0] = 1;
+    }
+    chart.update();
+});
 
 
 
@@ -10,17 +24,17 @@ const chart = new Chart(interactiveCanvas, {
             {
                 type: "bar",
                 label: "uno",
-                data: [num[0]],
+                data: [numbers[0]],
                 borderWidth: 1,
             }, {
                 type: "bar",
                 label: "dos",
-                data: [num[1]],
+                data: [numbers[1]],
                 borderWidth: 1
             }, {
                 type: "bar",
                 label: "tres",
-                data: [num[2]],
+                data: [numbers[2]],
                 borderWidth: 1
             }
         ]
@@ -30,9 +44,15 @@ const chart = new Chart(interactiveCanvas, {
             const point = chart.getElementsAtEventForMode(e, "nearest", {intersect: true}, true);
             if (point.length !== 0){
                 const index = point[0].datasetIndex;
-                num[index] = num[index] + 1;
-                chart.data.datasets[index].data[0] = num[index];
+                numbers[index] = numbers[index] + 1;
+                chart.data.datasets[index].data[0] = numbers[index];
                 chart.update();
+            }
+        },
+        plugins: {
+            title: {
+                display: true,
+                text: "ChartJS with interaction click to add 1"
             }
         }
     }
